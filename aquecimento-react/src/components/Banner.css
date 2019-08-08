@@ -1,0 +1,42 @@
+.banner {
+    background-color: #000000;
+    padding: 20px 0px 10px 20px;
+}
+
+#titulo {
+    font-size: 130%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#titulo a{
+    color: white;
+    text-decoration: none;
+}
+
+#titulo a:hover{
+    color: #96C5B0;
+}
+
+#menu{
+    list-style: none;
+    display: inline;
+}
+
+#menu li{
+    display: inline;
+    margin-right: 20px;
+}
+
+#menu li:hover{
+    border-bottom: 5px solid #96C5B0;
+    padding-bottom: 3px;
+
+}
+
+#menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 110%;
+}
+
