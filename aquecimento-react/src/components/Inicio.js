@@ -4,7 +4,10 @@ class Inicio extends Component {
     render() {
         return (
             <div>
-                Início
+                <h3>Bem-vindo ao App de Aquecimento!</h3>
+                <p>
+                    Neste app podemos ter um exemplo de como criar um app React básico!
+                </p>
             </div>
         );
     }

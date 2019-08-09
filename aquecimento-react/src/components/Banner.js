@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import './Banner.css';
 class Banner extends Component {
     render() {
         return (
             <div className="banner">
                 <span id="titulo">
-                    <a href="/inicio">Aquecimento</a>
+                 <Link to = "/Início"> Aquecimento</Link>
                 </span>
                 <ul id="menu">
                     <li>
-                        <a href="/">Início</a>
+                    <Link to = "/Início"> Início</Link>
                     </li>
                     <li>
-                        <a href="/sobre">Sobre</a>
+                    <Link to = "/Sobre"> Sobre</Link>
                     </li>
                     <li>
-                        <a href="/contato">Contato</a>
+                    <Link to = "/Contato">Contato</Link>
                     </li>
                 </ul>
             </div>
