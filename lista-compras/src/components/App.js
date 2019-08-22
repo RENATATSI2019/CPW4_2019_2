@@ -17,7 +17,7 @@ class App extends Component {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path = "/" component = {Listas}/>
-            <Route exact path = "/" component = {Lista}/>
+            <Route exact path = "/lista" component = {Lista}/>
 
           </Switch>
         </BrowserRouter>
