@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 import Menu from '../menu/Menu';
 import logo from '../../img/logo.png';
@@ -47,14 +48,30 @@ export default class Listas extends Component {
 
                 <div className="conteiner">
                     <div>
-                        <h2>Minhas listas</h2>
+                        {   
+                            /*
+                            Neste trecho de código o Operador AND (&&) atua como
+                            um perador de ligação entre a condição lógica e o código
+                            de apresentação a ser renderizado.
+                            */
+                            !this.state.listas &&
+                            <h2>Minhas listas</h2>
+                        }
+                        {
+                            this.state.listas &&
+                            <p id= "mensagemNenhumaLista">
+                                Clique no botão abaixo para cadastrar uma nova lista.
+                            </p>
 
+                        }
                         <div id="listagem">
                             {listas}
                         </div>
 
                         <div id="areaBotao">
-                            <img src={adicionar} alt="Nova Lista" id="botaoNovaLista"/>
+                            <Link to = "/criarlista">
+                                <img src={adicionar} alt="Nova Lista" id="botaoNovaLista"/>
+                            </Link>
                         </div>
 
                     </div>
