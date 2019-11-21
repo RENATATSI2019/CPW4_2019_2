@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import ReactLoading from 'react-loading';
+import { Link } from 'react-router-dom';
 
 import logo from '../img/logo.png';
 import imgDefault from '../img/imgDefault.png';
 import Header from '../components/Header';
-import './Pesquisar.scss';
 import SeriesService from '../services/SeriesService';
+import './Pesquisar.scss';
 
 export default class Pesquisar extends Component {
 
@@ -48,6 +49,9 @@ export default class Pesquisar extends Component {
 
     render() {
         const { series, textoPesquisa } = this.state;
+        console.log(series);
+
+
         const listaSeries = series.map(serie => {
             let imagem = imgDefault;
             if (serie.show.image && serie.show.image.medium) {
@@ -56,10 +60,25 @@ export default class Pesquisar extends Component {
 
             return (
                 <div key={serie.show.id} className="serie">
-                    <img
-                        src={imagem}
-                        alt="Cartaz da série" />
-                    <span>{serie.show.name}</span>
+                    <Link to={
+                        {
+                            pathname: '/serie',
+                            state: { serie, imagem }
+                        }
+                    }>
+                        <img
+                            src={imagem}
+                            alt="Cartaz da série" />
+                    </Link>
+
+                    <Link to={
+                        {
+                            pathname: '/serie',
+                            state: { serie }
+                        }
+                    }>
+                        <span>{serie.show.name}</span>
+                    </Link>
                 </div>
             )
         });
@@ -91,7 +110,7 @@ export default class Pesquisar extends Component {
                         <ReactLoading
                             id="animacao"
                             type="bars"
-                            color="#005bcc"
+                            color="#00b5cc"
                             height="60px"
                             width="60px" />
                     </div>
@@ -101,7 +120,7 @@ export default class Pesquisar extends Component {
                     {
                         (naoTemResultadoParaExibir
                             && usuarioEstaPesquisando) &&
-                        <span>Nenhuma série encontrada</span>
+                        <span id="mensagemNaoEncontrado">Nenhuma série encontrada</span>
                     }
                     {listaSeries}
                 </div>
